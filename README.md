@@ -1,10 +1,6 @@
-# EXpressJS Base Source Apply DI With Inversify - Using Repository Pattern with TypeORM
+# SE214 School Project - Backend
 
-# ExpressJS-clean-basesource
-
-### Author: haphuthinh
-
-Very clean base source of NodeJS (Express) using DI with Inversify + Service - Repository Pattern with TypeORM
+In ./main: very clean base source of NodeJS (Express) using DI with Inversify + Service - Repository Pattern with TypeORM
 
 ## Usage
 
@@ -17,4 +13,16 @@ docker compose up --build -d
 Start in development:
 
 -> Go to and read /main/README.md
+
+## Workflow:
+
+![alt text](https://images.viblo.asia/84f47fd1-a009-4beb-8957-26395fe1023d.png)
+
+- 1. Clone this repository
+- 2. Create new feature branch from the develop branch,
+     the feature branch is describe each feature are being developed.
+     Ex:
+     Create user api: feature/user
+     -> If want to fix the feature of user api, create feature/user/fix
+
 # se214-group2-backend
