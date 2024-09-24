@@ -10,11 +10,14 @@ import { inject, injectable } from 'inversify';
 
 @injectable()
 export class AccountService extends BaseCrudService<Account> implements IAccountService<Account> {
-  constructor(@inject('AccountRepository') repository: IAccountRepository<Account>) {
-    super(repository);
+  private accountRepository: IAccountRepository<Account>;
+  constructor(@inject('AccountRepository') accountRepository: IAccountRepository<Account>) {
+    super(accountRepository);
+    this.accountRepository = accountRepository;
   }
+
   async register(data: RegisterAccountReq): Promise<RegisterAccountRes> {
-    const result = await this.baseRepository.create({
+    const result = await this.accountRepository.create({
       data: data
     });
     return convertToDto(RegisterAccountRes, result);

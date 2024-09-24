@@ -6,7 +6,9 @@ import { inject, injectable } from 'inversify';
 
 @injectable()
 export class DiscountService extends BaseCrudService<Discount> implements IDiscountService<Discount> {
-  constructor(@inject('DiscountRepository') repository: IDiscountRepository<Discount>) {
-    super(repository);
+  private discountRepository: IDiscountRepository<Discount>;
+  constructor(@inject('DiscountRepository') discountRepository: IDiscountRepository<Discount>) {
+    super(discountRepository);
+    this.discountRepository = discountRepository;
   }
 }

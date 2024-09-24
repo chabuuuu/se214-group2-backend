@@ -19,7 +19,8 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check ./src",
     "prettier:fix": "prettier --write ./src",
-    "prepare": "cd .. && husky main/.husky"
+    "prepare": "cd .. && husky main/.husky",
+    "create-container": "ts-node ./src/container/auto-genarate-container.ts "
   },
   "keywords": [],
   "author": "chabuuuu",
