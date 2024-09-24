@@ -8,8 +8,6 @@ const roleRouter = express.Router();
 
 roleRouter
 
-  .post('/with-account', classValidate(CreateRoleWithAccountReq), roleController.createWithAccount.bind(roleController))
-
   .post('/', classValidate(CreateRoleReq), roleController.common.create.bind(roleController.common))
   .put('/update/:id', classValidate(UpdateRoleReq), roleController.common.update.bind(roleController.common))
   .delete('/delete/:id', roleController.common.delete.bind(roleController.common))

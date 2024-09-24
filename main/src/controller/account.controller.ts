@@ -62,4 +62,17 @@ export class AccountController {
       next(error);
     }
   }
+
+  /**
+   * * POST /api/account/register
+   */
+  async register(req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const requestBody: CreateAccountReq = req.body;
+      const result = await this.accountService.register(requestBody);
+      res.send_ok('Register successful', result);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
