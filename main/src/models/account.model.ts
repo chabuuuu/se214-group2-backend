@@ -8,12 +8,6 @@ export class Account {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @ManyToOne(() => Role, (role) => role.accounts)
-  role!: Role;
-
-  @Column()
-  roleId!: string;
-
   @Column('varchar', { length: 30 })
   email!: string;
 

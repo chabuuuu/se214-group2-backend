@@ -18,20 +18,4 @@ export class RoleService extends BaseCrudService<Role> implements IRoleService<R
     super(roleRepository);
     this.roleRepository = roleRepository;
   }
-
-  async createWithAccount(payload: { data: CreateRoleWithAccountReq }): Promise<CreateRoleWithAccountRes> {
-    const { data } = payload;
-    const result = await this.roleRepository.create({
-      data: {
-        name: data.roleName,
-        accounts: data.accountIdList.map((id) => ({ id }))
-      }
-    });
-
-    const responnse = new CreateRoleWithAccountRes();
-    responnse.accountIdList = result.accounts.map((account) => account.id);
-    responnse.roleName = result.name;
-    responnse.roleId = result.id;
-    return responnse;
-  }
 }

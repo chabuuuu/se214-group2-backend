@@ -19,22 +19,4 @@ export class RoleController {
     this.roleService = service;
     this.common = common;
   }
-
-  /**
-   * * POST /api/role/with-account
-   * @param req
-   * @param res
-   * @param next
-   */
-  async createWithAccount(req: Request, res: Response, next: NextFunction) {
-    try {
-      const requestBody: CreateRoleWithAccountReq = req.body;
-      const result: CreateRoleWithAccountRes = await this.roleService.createWithAccount({
-        data: requestBody
-      });
-      res.send_ok('Create new role with account successful', result);
-    } catch (error) {
-      next(error);
-    }
-  }
 }
