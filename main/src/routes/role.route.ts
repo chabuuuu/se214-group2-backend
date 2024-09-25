@@ -11,9 +11,7 @@ roleRouter
   .post('/', classValidate(CreateRoleReq), roleController.common.create.bind(roleController.common))
   .put('/update/:id', classValidate(UpdateRoleReq), roleController.common.update.bind(roleController.common))
   .delete('/delete/:id', roleController.common.delete.bind(roleController.common))
-
   .get('/:id', roleController.common.findOne.bind(roleController.common))
-
   .get('/', roleController.common.findAll.bind(roleController.common));
 
 export default roleRouter;
