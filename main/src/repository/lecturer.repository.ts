@@ -7,7 +7,7 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 
 export class LecturerRepository extends BaseRepository<Lecturer> implements ILecturerRepository<Lecturer> {
-constructor(@inject(ITYPES.Datasource) dataSource: DataSource) {
-super(dataSource.getRepository(Lecturer));
-}
+  constructor(@inject(ITYPES.Datasource) dataSource: DataSource) {
+    super(dataSource.getRepository(Lecturer));
+  }
 }

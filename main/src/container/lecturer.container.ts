@@ -9,16 +9,16 @@ import { BaseContainer } from '@/container/base.container';
 class LecturerContainer extends BaseContainer {
   constructor() {
     super(Lecturer);
-this.container.bind<ILecturerService<Lecturer>>('LecturerService').to(LecturerService);
-this.container.bind<ILecturerRepository<Lecturer>>('LecturerRepository').to(LecturerRepository);
-this.container.bind<LecturerController>(LecturerController).toSelf();
-}
+    this.container.bind<ILecturerService<Lecturer>>('LecturerService').to(LecturerService);
+    this.container.bind<ILecturerRepository<Lecturer>>('LecturerRepository').to(LecturerRepository);
+    this.container.bind<LecturerController>(LecturerController).toSelf();
+  }
 
-export() {
-const lecturerController = this.container.get<LecturerController>(LecturerController);
+  export() {
+    const lecturerController = this.container.get<LecturerController>(LecturerController);
     const lecturerService = this.container.get<ILecturerService<any>>('LecturerService');
-return { lecturerController, lecturerService };
-}
+    return { lecturerController, lecturerService };
+  }
 }
 
 const lecturerContainer = new LecturerContainer();

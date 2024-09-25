@@ -7,13 +7,13 @@ import { inject, injectable } from 'inversify';
 
 @injectable()
 export class LecturerController {
-public common: IBaseCrudController<Lecturer>;
-private lecturerService: ILecturerService<Lecturer>;
-constructor(
-@inject('LecturerService') lecturerService: ILecturerService<Lecturer>,
-@inject(ITYPES.Controller) common: IBaseCrudController<Lecturer>
-) {
-this.lecturerService = lecturerService;
-this.common = common;
-}
+  public common: IBaseCrudController<Lecturer>;
+  private lecturerService: ILecturerService<Lecturer>;
+  constructor(
+    @inject('LecturerService') lecturerService: ILecturerService<Lecturer>,
+    @inject(ITYPES.Controller) common: IBaseCrudController<Lecturer>
+  ) {
+    this.lecturerService = lecturerService;
+    this.common = common;
+  }
 }

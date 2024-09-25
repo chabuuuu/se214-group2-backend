@@ -6,10 +6,10 @@ import { inject, injectable } from 'inversify';
 
 @injectable()
 export class LecturerService extends BaseCrudService<Lecturer> implements ILecturerService<Lecturer> {
-private lecturerRepository: ILecturerRepository<Lecturer>;
+  private lecturerRepository: ILecturerRepository<Lecturer>;
 
-constructor(@inject('LecturerRepository') lecturerRepository: ILecturerRepository<Lecturer>) {
-super(lecturerRepository);
-this.lecturerRepository = lecturerRepository;
-}
+  constructor(@inject('LecturerRepository') lecturerRepository: ILecturerRepository<Lecturer>) {
+    super(lecturerRepository);
+    this.lecturerRepository = lecturerRepository;
+  }
 }
