@@ -20,7 +20,7 @@
     "prettier": "prettier --check ./src",
     "prettier:fix": "prettier --write ./src",
     "prepare": "cd .. && husky main/.husky",
-    "create-container": "ts-node ./src/container/auto-genarate-container.ts "
+    "create:module": "ts-node ./src/utils/tools/auto-generate-module.ts"
   },
   "keywords": [],
   "author": "chabuuuu",
