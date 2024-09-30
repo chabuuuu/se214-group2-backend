@@ -10,6 +10,6 @@
   "helmet": false,
   "enviroment": "development",
   "database": {
-    "sync": false
+    "sync": true
   }
 }
